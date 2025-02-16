@@ -1,0 +1,342 @@
+:root {
+  /* Cores principais */
+  --cor-primaria: #a60734; /* Cor primária (ex.: botões, títulos) */
+  --cor-primaria-hover: #27020C; /* Cor primária ao passar o mouse */
+  --cor-secundaria: #934f65; /* Cor secundária */
+  --fundo-pagina: #f9fafb; /* Fundo da página */
+  --fundo-superficie:  #f9fafb; /* Fundo de superfícies (ex.: cards, modais) */
+  --cor-texto: #111827; /* Cor do texto principal */
+  --cor-texto-desativado: #6b7280; /* Cor do texto secundário ou desabilitado */
+  --cor-borda: #e5e7eb; /* Cor das bordas */
+
+  /* Cores de status */
+  --sucesso: #4ac37b; /* Sucesso (ex.: tarefa concluída) */
+  --aviso: #feff00; /* Aviso (ex.: tarefa pendente) */
+  --erro: #f87171; /* Erro (ex.: falha ao salvar) */
+
+  /* Sombras */
+  --sombra-pequena: 0 1px 2px 0 rgb(0 0 0 / 0.05); /* Sombra pequena */
+  --sombra-media: 0 4px 6px -1px rgb(0 0 0 / 0.1); /* Sombra média */
+  --sombra-grande: 0 10px 15px -3px rgb(0 0 0 / 0.1); /* Sombra grande */
+}
+
+/* Reset global */
+* {
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove preenchimentos padrão */
+  box-sizing: border-box; /* Garante que as bordas e paddings não aumentem o tamanho dos elementos */
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif; /* Define uma fonte moderna e legível */
+}
+
+/* Estilo básico do corpo da página */
+body {
+  background: var(--fundo-pagina); /* Define o fundo da página */
+  color: var(--cor-texto); /* Define a cor do texto principal */
+  min-height: 100vh; /* Garante que o corpo ocupe toda a altura da viewport */
+  line-height: 1.5; /* Espaçamento entre linhas para melhor legibilidade */
+}
+
+.app-header {
+  background: var(--fundo-superficie); /* Fundo claro para o cabeçalho */
+  padding: 1.5rem 0; /* Espaçamento interno */
+  box-shadow: var(--sombra-pequena); /* Sombra leve para destacar o cabeçalho */
+  border-bottom: 1px solid var(--cor-borda); /* Borda inferior para separar do conteúdo */
+  margin-bottom: 2rem; /* Espaço abaixo do cabeçalho */
+}
+
+.app-title {
+  font-size: 1.875rem; /* Tamanho do título */
+  font-weight: 700; /* Negrito para destaque */
+  color: var(--cor-primaria); /* Cor primária para o título */
+  text-align: center; /* Centraliza o texto */
+  letter-spacing: -0.025em; /* Ajusta o espaçamento entre letras */
+}
+
+.container {
+  max-width: 768px; /* Largura máxima para dispositivos maiores */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  padding: 0 1.5rem; /* Espaçamento lateral para dispositivos menores */
+}
+
+.task-form {
+  background: var(--fundo-superficie); /* Fundo claro */
+  padding: 1.5rem; /* Espaçamento interno */
+  border-radius: 1rem; /* Bordas arredondadas */
+  box-shadow: var(--sombra-media); /* Sombra para destacar o formulário */
+  margin-bottom: 2rem; /* Espaço abaixo do formulário */
+  display: flex; /* Layout flexível para alinhar os campos */
+  gap: 1rem; /* Espaçamento entre os campos */
+}
+
+.form-input {
+  flex: 1; /* O campo de entrada ocupa o espaço disponível */
+  padding: 0.9rem 2rem; /* Espaçamento interno */
+  border: 2px solid var(--cor-borda); /* Borda clara */
+  border-radius: 0.5rem; /* Bordas arredondadas */
+  font-size: 1rem; /* Tamanho da fonte */
+  transition: all 0.2s ease; /* Transição suave para hover/focus */
+}
+
+.form-input:focus {
+  outline: none; /* Remove o contorno padrão ao focar */
+  border-color: var(--cor-primaria); /* Altera a cor da borda */
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1); /* Adiciona uma sombra sutil */
+}
+
+.form-button {
+  background: var(--cor-primaria); /* Fundo da cor primária */
+  color: white; /* Texto branco */
+  font-weight: 600; /* Negrito para destaque */
+  padding: 0.75rem 1.5rem; /* Espaçamento interno */
+  border: none; /* Remove a borda */
+  border-radius: 0.5rem; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor de ponteiro */
+  transition: all 0.2s ease; /* Transição suave para hover */
+}
+
+.form-button:hover {
+  background: var(--cor-primaria-hover); /* Altera a cor ao passar o mouse */
+  transform: translateY(-1px); /* Efeito de elevação */
+}
+
+.task-list {
+  display: flex; /* Layout flexível */
+  flex-direction: column; /* Organiza os itens verticalmente */
+  gap: 1rem; /* Espaçamento entre as tarefas */
+}
+
+.filters {
+  display: flex; /* Layout flexível */
+  gap: 0.75rem; /* Espaçamento entre os botões */
+  margin-bottom: 1.5rem; /* Espaço abaixo dos filtros */
+  padding: 0.5rem; /* Espaçamento interno */
+  background: var(--fundo-superficie); /* Fundo claro */
+  border-radius: 0.75rem; /* Bordas arredondadas */
+  box-shadow: var(--sombra-pequena); /* Sombra leve */
+}
+
+.filter-button {
+  padding: 0.5rem 1rem; /* Espaçamento interno */
+  border: none; /* Remove a borda */
+  border-radius: 0.5rem; /* Bordas arredondadas */
+  font-weight: 500; /* Negrito para destaque */
+  color: var(--cor-texto-desativado); /* Cor do texto desativada */
+  background: transparent; /* Fundo transparente */
+  cursor: pointer; /* Cursor de ponteiro */
+  transition: all 0.2s ease; /* Transição suave para hover */
+}
+
+.filter-button:hover {
+  color: var(--cor-primaria); /* Altera a cor ao passar o mouse */
+}
+
+.filter-button.active {
+  background: var(--cor-primaria); /* Fundo da cor primária para o botão ativo */
+  color: white; /* Texto branco */
+}
+
+.task-card {
+  background: var(--fundo-superficie); /* Fundo claro */
+  border-radius: 1rem; /* Bordas arredondadas mais suaves */
+  padding: 1.5rem; /* Espaçamento interno maior */
+  display: flex; /* Layout flexível */
+  flex-direction: column; /* Organiza os elementos verticalmente */
+  gap: 1rem; /* Espaçamento entre os elementos */
+  box-shadow: var(--sombra-media); /* Sombra mais pronunciada */
+  transition: all 0.3s ease; /* Transição suave para hover */
+  border: 1px solid var(--cor-borda); /* Borda clara */
+}
+
+.task-card:hover {
+  transform: translateY(-4px); /* Efeito de elevação */
+  box-shadow: var(--sombra-grande); /* Sombra ainda mais pronunciada */
+}
+
+.task-card.completed {
+  background: var(--fundo-pagina); /* Fundo mais claro para tarefas concluídas */
+  border-color: var(--cor-borda); /* Borda clara */
+}
+
+.task-card.completed .task-title {
+  color: var(--cor-texto-desativado); /* Texto desativado */
+  text-decoration: line-through; /* Risca o texto para indicar conclusão */
+}
+
+.task-checkbox {
+  width: 1.5rem; /* Largura maior do checkbox */
+  height: 1.5rem; /* Altura maior do checkbox */
+  border: 2px solid var(--cor-borda); /* Borda clara */
+  border-radius: 0.5rem; /* Bordas arredondadas mais suaves */
+  cursor: pointer; /* Cursor de ponteiro */
+  transition: all 0.2s ease; /* Transição suave para hover */
+}
+
+.task-checkbox:checked {
+  background: var(--cor-primaria); /* Fundo da cor primária quando marcado */
+  border-color: var(--cor-primaria); /* Borda da cor primária */
+}
+
+.task-title {
+  font-size: 1.25rem; /* Tamanho maior para o título */
+  color: var(--cor-texto); /* Cor do texto principal */
+  text-decoration: none; /* Remove sublinhado */
+  font-weight: 600; /* Negrito para destaque */
+}
+
+.task-observation {
+  font-size: 0.9rem; /* Tamanho menor para a observação */
+  color: var(--cor-texto-desativado); /* Cor mais suave */
+  margin-top: 0.5rem; /* Espaçamento acima da observação */
+  white-space: pre-wrap; /* Preserva quebras de linha e permite wrap */
+  word-wrap: break-word; /* Força quebra de palavras longas */
+  overflow-wrap: break-word; /* Garante que palavras longas quebrem */
+  max-width: 100%; /* Limita a largura máxima */
+}
+
+.task-actions {
+  display: flex; /* Layout flexível */
+  justify-content: flex-end; /* Alinha os botões à direita */
+  gap: 0.75rem; /* Espaçamento entre as ações */
+}
+
+.task-actions-left {
+  display: flex; /* Layout flexível */
+  align-items: center; /* Alinha verticalmente */
+  justify-content: flex-start; /* Alinha à esquerda */
+  margin-bottom: 0.5rem; /* Espaçamento abaixo do botão */
+}
+
+.complete-button {
+  background: transparent; /* Fundo transparente */
+  border: none; /* Remove borda */
+  cursor: pointer; /* Cursor de ponteiro */
+  color: var(--cor-texto-desativado); /* Cor do ícone desativada */
+  transition: all 0.2s ease; /* Transição suave para hover */
+  padding: 0.5rem; /* Espaçamento interno */
+  border-radius: 0.5rem; /* Bordas arredondadas */
+}
+
+.complete-button:hover {
+  background: rgba(99, 102, 241, 0.1); /* Fundo sutil ao passar o mouse */
+  color: var(--cor-primaria); /* Altera a cor do ícone */
+}
+
+.complete-button.completed {
+  color: var(--sucesso); /* Cor verde para tarefas concluídas */
+}
+
+.icon-button {
+  padding: 0.75rem; /* Espaçamento interno maior */
+  border: none; /* Remove a borda */
+  background: transparent; /* Fundo transparente */
+  color: var(--cor-texto-desativado); /* Cor do ícone desativada */
+  cursor: pointer; /* Cursor de ponteiro */
+  border-radius: 0.5rem; /* Bordas arredondadas mais suaves */
+  transition: all 0.2s ease; /* Transição suave para hover */
+  display: flex; /* Layout flexível */
+  align-items: center; /* Alinha os ícones verticalmente */
+  justify-content: center; /* Centraliza os ícones horizontalmente */
+}
+
+.icon-button:hover {
+  background: rgba(99, 102, 241, 0.1); /* Fundo sutil ao passar o mouse */
+  color: var(--cor-primaria); /* Altera a cor do ícone */
+}
+
+.task-details {
+  background: var(--fundo-superficie); /* Fundo claro */
+  border-radius: 1rem; /* Bordas arredondadas */
+  padding: 2rem; /* Espaçamento interno */
+  box-shadow: var(--sombra-media); /* Sombra média */
+}
+
+.task-details h2 {
+  color: var(--cor-primaria); /* Cor do título */
+  font-size: 1.5rem; /* Tamanho do título */
+  font-weight: 700; /* Negrito para destaque */
+  margin-bottom: 1.5rem; /* Espaço abaixo do título */
+  padding-bottom: 0.75rem; /* Espaçamento interno */
+  border-bottom: 2px solid var(--cor-borda); /* Borda inferior */
+}
+
+.task-details p {
+  margin-bottom: 1rem; /* Espaço abaixo de cada parágrafo */
+  display: flex; /* Layout flexível */
+  align-items: flex-start; /* Alinha os elementos no topo */
+  gap: 0.5rem; /* Espaçamento entre os elementos */
+  color: var(--cor-texto); /* Cor do texto */
+  flex-wrap: wrap; /* Permite quebra de linha */
+  word-break: break-word; /* Força quebra de palavras longas */
+  overflow-wrap: break-word; /* Garante que palavras longas quebrem */
+}
+
+.task-details strong {
+  color: var(--cor-texto-desativado); /* Cor do texto secundário */
+  min-width: 100px; /* Largura mínima para alinhamento */
+}
+
+.task-details p span {
+  flex: 1; /* Permite que o conteúdo ocupe o espaço disponível */
+  min-width: 0; /* Permite que o texto quebre */
+  word-wrap: break-word; /* Quebra palavras longas */
+}
+
+.icon-completed {
+  color: var(--sucesso); /* Ícone de sucesso */
+}
+
+.icon-pending {
+  color: var(--aviso); /* Ícone de aviso */
+}
+
+.icon-error {
+  color: var(--erro); /* Ícone de erro */
+}
+
+@media (max-width: 640px) {
+  .task-form {
+    flex-direction: column; /* Organiza os campos verticalmente */
+  }
+
+  .form-button {
+    width: 100%; /* Botão ocupa toda a largura */
+  }
+
+  .filters {
+    flex-wrap: wrap; /* Permite que os botões quebrem linha */
+    justify-content: center; /* Centraliza os botões */
+  }
+
+  .task-item {
+    flex-direction: column; /* Organiza os elementos verticalmente */
+    align-items: flex-start; /* Alinha os elementos à esquerda */
+  }
+
+  .task-actions {
+    width: 100%; /* Ações ocupam toda a largura */
+    justify-content: flex-end; /* Alinha as ações à direita */
+    padding-top: 0.5rem; /* Espaçamento acima das ações */
+    margin-top: 0.5rem; /* Espaço abaixo das ações */
+    border-top: 1px solid var(--cor-borda); /* Borda superior */
+  }
+}
+
+.return-button-container {
+  margin-bottom: 1.5rem; /* Espaçamento abaixo do botão */
+}
+
+.return-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--cor-primaria);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.return-button:hover {
+  background-color: var(--cor-primaria-hover);
+  transform: translateY(-1px);
+}
