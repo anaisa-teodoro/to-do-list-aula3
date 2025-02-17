@@ -1,6 +1,6 @@
-# Listar tarefas
+# Listar tarefas App
 
-## To-Do List App
+
 ```plaintext
 to-do-list-app/
 ├── src/
@@ -28,11 +28,15 @@ to-do-list-app/
 
 - Node.js;
 - Npm;
+- React-dom;
 - Lucide-react;
 - Axios;
 
 
 #### Usar versão Node do projeto:
+
+Digite o seguinte comando no terminal:
+
 ```bash
 node -v > .nvmrc
 ```
@@ -56,8 +60,11 @@ node -v > .nvmrc
    - Certifique-se de que o arquivo `db.json` existe na pasta `data` do projeto. Ele deve conter uma estrutura inicial como esta:
      ```json
      {
-       "tarefas": []
-     }
+       "tarefas": [
+         { "id": "0101",
+         "title": "Estudar JavaScript",
+         "completed": false 
+         }]},
      ```
 
 4. #### Inicie o Servidor de Desenvolvimento
@@ -67,19 +74,18 @@ node -v > .nvmrc
 
 5. ### Acesse a Aplicação
    #### Abra o navegador e acesse: 
-   <br>
+   
    [http://localhost:3000](http://localhost:3000)
-   <br>
-    [http://localhost:3000/tarefas](http://localhost:3001/tarefas)
-
+  
+    [http://localhost:3001/tarefas](http://localhost:3001/tarefas)
 
 ---
 
 ## 🌟 Como Usar a Aplicação
 
 1. #### Adicionar uma Nova Tarefa
-   - Na página inicial, insira o título da tarefa no campo de texto e clique em "Adicionar Tarefa".
-   - Observações podem ser adicionadas ao editar a tarefa.
+   - Na página inicial, insira o título da tarefa no campo de texto e clique em "Adicionar" a tarefa".
+   - Podem serem adicionadas ao editar a tarefa.
 
 2. #### Marcar como Concluída
    - Clique na caixa de seleção ao lado da tarefa para marcá-la como concluída.
@@ -98,5 +104,6 @@ node -v > .nvmrc
 
 ---
 
-_Praticado esse exercício em uma das aulas do Devs2Blu._
+_Praticado esse exercício em uma das aulas do Devs2Blu [2025]._
+
 

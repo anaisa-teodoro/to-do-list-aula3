@@ -1,328 +1,334 @@
 :root {
-  /* Cores principais */
-  --cor-primaria: #a60734; /* Cor primária (ex.: botões, títulos) */
-  --cor-primaria-hover: #27020C; /* Cor primária ao passar o mouse */
-  --cor-secundaria: #934f65; /* Cor secundária */
-  --fundo-pagina: #f9fafb; /* Fundo da página */
-  --fundo-superficie:  #f9fafb; /* Fundo de superfícies (ex.: cards, modais) */
-  --cor-texto: #111827; /* Cor do texto principal */
-  --cor-texto-desativado: #6b7280; /* Cor do texto secundário ou desabilitado */
-  --cor-borda: #e5e7eb; /* Cor das bordas */
-
-  /* Cores de status */
-  --sucesso: #4ac37b; /* Sucesso (ex.: tarefa concluída) */
-  --aviso: #feff00; /* Aviso (ex.: tarefa pendente) */
-  --erro: #f87171; /* Erro (ex.: falha ao salvar) */
-
-  /* Sombras */
-  --sombra-pequena: 0 1px 2px 0 rgb(0 0 0 / 0.05); /* Sombra pequena */
-  --sombra-media: 0 4px 6px -1px rgb(0 0 0 / 0.1); /* Sombra média */
-  --sombra-grande: 0 10px 15px -3px rgb(0 0 0 / 0.1); /* Sombra grande */
+  --cor-primaria: #a60734;
+  --cor-primaria-hover: #27020C;
+  --cor-secundaria: #934f65;
+  --fundo-pagina: #f9fafb;
+  --fundo-superficie:  #f9fafb;
+  --cor-texto: #111827;
+  --cor-texto-desativado: #6b7280;
+  --cor-borda: #e5e7eb;
+  --sucesso: #4ac37b;
+  --aviso: #feff00;
+  --erro: #e71010;
+  --sombra-pequena: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --sombra-media: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --sombra-grande: 0 10px 15px -3px rgb(0 0 0 / 0.1);
 }
 
-/* Reset global */
 * {
-  margin: 0; /* Remove margens padrão */
-  padding: 0; /* Remove preenchimentos padrão */
-  box-sizing: border-box; /* Garante que as bordas e paddings não aumentem o tamanho dos elementos */
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif; /* Define uma fonte moderna e legível */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Estilo básico do corpo da página */
 body {
-  background: var(--fundo-pagina); /* Define o fundo da página */
-  color: var(--cor-texto); /* Define a cor do texto principal */
-  min-height: 100vh; /* Garante que o corpo ocupe toda a altura da viewport */
-  line-height: 1.5; /* Espaçamento entre linhas para melhor legibilidade */
+  background: var(--fundo-pagina);
+  color: var(--cor-texto);
+  min-height: 100vh;
+  line-height: 1.5;
 }
 
 .app-header {
-  background: var(--fundo-superficie); /* Fundo claro para o cabeçalho */
-  padding: 1.5rem 0; /* Espaçamento interno */
-  box-shadow: var(--sombra-pequena); /* Sombra leve para destacar o cabeçalho */
-  border-bottom: 1px solid var(--cor-borda); /* Borda inferior para separar do conteúdo */
-  margin-bottom: 2rem; /* Espaço abaixo do cabeçalho */
+  background: var(--fundo-superficie);
+  padding: 1.5rem 0;
+  box-shadow: var(--sombra-pequena);
+  border-bottom: 1px solid var(--cor-borda);
+  margin-bottom: 2rem;
 }
 
 .app-title {
-  font-size: 1.875rem; /* Tamanho do título */
-  font-weight: 700; /* Negrito para destaque */
-  color: var(--cor-primaria); /* Cor primária para o título */
-  text-align: center; /* Centraliza o texto */
-  letter-spacing: -0.025em; /* Ajusta o espaçamento entre letras */
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--cor-primaria);
+  text-align: center;
+  letter-spacing: -0.025em;
+}
+
+.footer {
+  background: var(--cor-primaria);
+  font-weight: 600;
+  text-align: center;
+  max-width: 768px;
+  margin: auto;
+  padding: 0.5rem;
+  color: white;
+  margin-top: 2rem;
 }
 
 .container {
-  max-width: 768px; /* Largura máxima para dispositivos maiores */
-  margin: 0 auto; /* Centraliza horizontalmente */
-  padding: 0 1.5rem; /* Espaçamento lateral para dispositivos menores */
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 .task-form {
-  background: var(--fundo-superficie); /* Fundo claro */
-  padding: 1.5rem; /* Espaçamento interno */
-  border-radius: 1rem; /* Bordas arredondadas */
-  box-shadow: var(--sombra-media); /* Sombra para destacar o formulário */
-  margin-bottom: 2rem; /* Espaço abaixo do formulário */
-  display: flex; /* Layout flexível para alinhar os campos */
-  gap: 1rem; /* Espaçamento entre os campos */
+  background: var(--fundo-superficie);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: var(--sombra-media);
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .form-input {
-  flex: 1; /* O campo de entrada ocupa o espaço disponível */
-  padding: 0.9rem 2rem; /* Espaçamento interno */
-  border: 2px solid var(--cor-borda); /* Borda clara */
-  border-radius: 0.5rem; /* Bordas arredondadas */
-  font-size: 1rem; /* Tamanho da fonte */
-  transition: all 0.2s ease; /* Transição suave para hover/focus */
+  flex: auto;
+  padding: 0.9rem 2rem;
+  border: 2px solid var(--cor-borda);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  margin: 10 auto;
+  flex-direction: column;
 }
 
 .form-input:focus {
-  outline: none; /* Remove o contorno padrão ao focar */
-  border-color: var(--cor-primaria); /* Altera a cor da borda */
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1); /* Adiciona uma sombra sutil */
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 .form-button {
-  background: var(--cor-primaria); /* Fundo da cor primária */
-  color: white; /* Texto branco */
-  font-weight: 600; /* Negrito para destaque */
-  padding: 0.75rem 1.5rem; /* Espaçamento interno */
-  border: none; /* Remove a borda */
-  border-radius: 0.5rem; /* Bordas arredondadas */
-  cursor: pointer; /* Cursor de ponteiro */
-  transition: all 0.2s ease; /* Transição suave para hover */
+  background: var(--cor-primaria);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .form-button:hover {
-  background: var(--cor-primaria-hover); /* Altera a cor ao passar o mouse */
-  transform: translateY(-1px); /* Efeito de elevação */
+  background: var(--cor-primaria-hover);
+  transform: translateY(-1px);
 }
 
 .task-list {
-  display: flex; /* Layout flexível */
-  flex-direction: column; /* Organiza os itens verticalmente */
-  gap: 1rem; /* Espaçamento entre as tarefas */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .filters {
-  display: flex; /* Layout flexível */
-  gap: 0.75rem; /* Espaçamento entre os botões */
-  margin-bottom: 1.5rem; /* Espaço abaixo dos filtros */
-  padding: 0.5rem; /* Espaçamento interno */
-  background: var(--fundo-superficie); /* Fundo claro */
-  border-radius: 0.75rem; /* Bordas arredondadas */
-  box-shadow: var(--sombra-pequena); /* Sombra leve */
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  background: var(--fundo-superficie);
+  border-radius: 0.75rem;
+  box-shadow: var(--sombra-pequena);
 }
 
 .filter-button {
-  padding: 0.5rem 1rem; /* Espaçamento interno */
-  border: none; /* Remove a borda */
-  border-radius: 0.5rem; /* Bordas arredondadas */
-  font-weight: 500; /* Negrito para destaque */
-  color: var(--cor-texto-desativado); /* Cor do texto desativada */
-  background: transparent; /* Fundo transparente */
-  cursor: pointer; /* Cursor de ponteiro */
-  transition: all 0.2s ease; /* Transição suave para hover */
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  color: var(--cor-texto-desativado);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .filter-button:hover {
-  color: var(--cor-primaria); /* Altera a cor ao passar o mouse */
+  color: var(--cor-primaria);
 }
 
 .filter-button.active {
-  background: var(--cor-primaria); /* Fundo da cor primária para o botão ativo */
-  color: white; /* Texto branco */
+  background: var(--cor-primaria);
+  color: white;
 }
 
 .task-card {
-  background: var(--fundo-superficie); /* Fundo claro */
-  border-radius: 1rem; /* Bordas arredondadas mais suaves */
-  padding: 1.5rem; /* Espaçamento interno maior */
-  display: flex; /* Layout flexível */
-  flex-direction: column; /* Organiza os elementos verticalmente */
-  gap: 1rem; /* Espaçamento entre os elementos */
-  box-shadow: var(--sombra-media); /* Sombra mais pronunciada */
-  transition: all 0.3s ease; /* Transição suave para hover */
-  border: 1px solid var(--cor-borda); /* Borda clara */
+  background: var(--fundo-superficie);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: var(--sombra-media);
+  transition: all 0.3s ease;
+  border: 1px solid var(--cor-borda);
 }
 
 .task-card:hover {
-  transform: translateY(-4px); /* Efeito de elevação */
-  box-shadow: var(--sombra-grande); /* Sombra ainda mais pronunciada */
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-grande);
 }
 
 .task-card.completed {
-  background: var(--fundo-pagina); /* Fundo mais claro para tarefas concluídas */
-  border-color: var(--cor-borda); /* Borda clara */
+  background: var(--fundo-pagina);
+  border-color: var(--cor-borda);
 }
 
 .task-card.completed .task-title {
-  color: var(--cor-texto-desativado); /* Texto desativado */
-  text-decoration: line-through; /* Risca o texto para indicar conclusão */
+  color: var(--cor-texto-desativado);
+  text-decoration: line-through;
 }
 
 .task-checkbox {
-  width: 1.5rem; /* Largura maior do checkbox */
-  height: 1.5rem; /* Altura maior do checkbox */
-  border: 2px solid var(--cor-borda); /* Borda clara */
-  border-radius: 0.5rem; /* Bordas arredondadas mais suaves */
-  cursor: pointer; /* Cursor de ponteiro */
-  transition: all 0.2s ease; /* Transição suave para hover */
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid var(--cor-borda);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .task-checkbox:checked {
-  background: var(--cor-primaria); /* Fundo da cor primária quando marcado */
-  border-color: var(--cor-primaria); /* Borda da cor primária */
+  background: var(--cor-primaria);
+  border-color: var(--cor-primaria);
 }
 
 .task-title {
-  font-size: 1.25rem; /* Tamanho maior para o título */
-  color: var(--cor-texto); /* Cor do texto principal */
-  text-decoration: none; /* Remove sublinhado */
-  font-weight: 600; /* Negrito para destaque */
+  font-size: 1.25rem;
+  color: var(--cor-texto);
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .task-observation {
-  font-size: 0.9rem; /* Tamanho menor para a observação */
-  color: var(--cor-texto-desativado); /* Cor mais suave */
-  margin-top: 0.5rem; /* Espaçamento acima da observação */
-  white-space: pre-wrap; /* Preserva quebras de linha e permite wrap */
-  word-wrap: break-word; /* Força quebra de palavras longas */
-  overflow-wrap: break-word; /* Garante que palavras longas quebrem */
-  max-width: 100%; /* Limita a largura máxima */
+  font-size: 0.9rem;
+  color: var(--cor-texto-desativado);
+  margin-top: 0.5rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 
 .task-actions {
-  display: flex; /* Layout flexível */
-  justify-content: flex-end; /* Alinha os botões à direita */
-  gap: 0.75rem; /* Espaçamento entre as ações */
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
 }
 
 .task-actions-left {
-  display: flex; /* Layout flexível */
-  align-items: center; /* Alinha verticalmente */
-  justify-content: flex-start; /* Alinha à esquerda */
-  margin-bottom: 0.5rem; /* Espaçamento abaixo do botão */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 0.5rem;
 }
 
 .complete-button {
-  background: transparent; /* Fundo transparente */
-  border: none; /* Remove borda */
-  cursor: pointer; /* Cursor de ponteiro */
-  color: var(--cor-texto-desativado); /* Cor do ícone desativada */
-  transition: all 0.2s ease; /* Transição suave para hover */
-  padding: 0.5rem; /* Espaçamento interno */
-  border-radius: 0.5rem; /* Bordas arredondadas */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--cor-texto-desativado);
+  transition: all 0.2s ease;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 .complete-button:hover {
-  background: rgba(99, 102, 241, 0.1); /* Fundo sutil ao passar o mouse */
-  color: var(--cor-primaria); /* Altera a cor do ícone */
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--cor-primaria);
 }
 
 .complete-button.completed {
-  color: var(--sucesso); /* Cor verde para tarefas concluídas */
+  color: var(--sucesso);
 }
 
 .icon-button {
-  padding: 0.75rem; /* Espaçamento interno maior */
-  border: none; /* Remove a borda */
-  background: transparent; /* Fundo transparente */
-  color: var(--cor-texto-desativado); /* Cor do ícone desativada */
-  cursor: pointer; /* Cursor de ponteiro */
-  border-radius: 0.5rem; /* Bordas arredondadas mais suaves */
-  transition: all 0.2s ease; /* Transição suave para hover */
-  display: flex; /* Layout flexível */
-  align-items: center; /* Alinha os ícones verticalmente */
-  justify-content: center; /* Centraliza os ícones horizontalmente */
+  padding: 0.75rem;
+  border: none;
+  background: transparent;
+  color: var(--cor-texto-desativado);
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .icon-button:hover {
-  background: rgba(99, 102, 241, 0.1); /* Fundo sutil ao passar o mouse */
-  color: var(--cor-primaria); /* Altera a cor do ícone */
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--cor-primaria);
 }
 
 .task-details {
-  background: var(--fundo-superficie); /* Fundo claro */
-  border-radius: 1rem; /* Bordas arredondadas */
-  padding: 2rem; /* Espaçamento interno */
-  box-shadow: var(--sombra-media); /* Sombra média */
+  background: var(--fundo-superficie);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: var(--sombra-media);
 }
 
 .task-details h2 {
-  color: var(--cor-primaria); /* Cor do título */
-  font-size: 1.5rem; /* Tamanho do título */
-  font-weight: 700; /* Negrito para destaque */
-  margin-bottom: 1.5rem; /* Espaço abaixo do título */
-  padding-bottom: 0.75rem; /* Espaçamento interno */
-  border-bottom: 2px solid var(--cor-borda); /* Borda inferior */
+  color: var(--cor-primaria);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--cor-borda);
 }
 
 .task-details p {
-  margin-bottom: 1rem; /* Espaço abaixo de cada parágrafo */
-  display: flex; /* Layout flexível */
-  align-items: flex-start; /* Alinha os elementos no topo */
-  gap: 0.5rem; /* Espaçamento entre os elementos */
-  color: var(--cor-texto); /* Cor do texto */
-  flex-wrap: wrap; /* Permite quebra de linha */
-  word-break: break-word; /* Força quebra de palavras longas */
-  overflow-wrap: break-word; /* Garante que palavras longas quebrem */
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: var(--cor-texto);
+  flex-wrap: wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .task-details strong {
-  color: var(--cor-texto-desativado); /* Cor do texto secundário */
-  min-width: 100px; /* Largura mínima para alinhamento */
+  color: var(--cor-texto-desativado);
+  min-width: 100px;
 }
 
 .task-details p span {
-  flex: 1; /* Permite que o conteúdo ocupe o espaço disponível */
-  min-width: 0; /* Permite que o texto quebre */
-  word-wrap: break-word; /* Quebra palavras longas */
+  flex: 1;
+  min-width: 0;
+  word-wrap: break-word;
 }
 
 .icon-completed {
-  color: var(--sucesso); /* Ícone de sucesso */
+  color: var(--sucesso);
 }
 
 .icon-pending {
-  color: var(--aviso); /* Ícone de aviso */
+  color: var(--aviso);
 }
 
 .icon-error {
-  color: var(--erro); /* Ícone de erro */
+  color: var(--erro);
 }
 
 @media (max-width: 640px) {
   .task-form {
-    flex-direction: column; /* Organiza os campos verticalmente */
+    flex-direction: column;
   }
 
   .form-button {
-    width: 100%; /* Botão ocupa toda a largura */
+    width: 100%;
   }
 
   .filters {
-    flex-wrap: wrap; /* Permite que os botões quebrem linha */
-    justify-content: center; /* Centraliza os botões */
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .task-item {
-    flex-direction: column; /* Organiza os elementos verticalmente */
-    align-items: flex-start; /* Alinha os elementos à esquerda */
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .task-actions {
-    width: 100%; /* Ações ocupam toda a largura */
-    justify-content: flex-end; /* Alinha as ações à direita */
-    padding-top: 0.5rem; /* Espaçamento acima das ações */
-    margin-top: 0.5rem; /* Espaço abaixo das ações */
-    border-top: 1px solid var(--cor-borda); /* Borda superior */
+    width: 100%;
+    justify-content: flex-end;
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+    border-top: 1px solid var(--cor-borda);
   }
 }
 
 .return-button-container {
-  margin-bottom: 1.5rem; /* Espaçamento abaixo do botão */
+  margin-bottom: 1.5rem;
 }
 
 .return-button {

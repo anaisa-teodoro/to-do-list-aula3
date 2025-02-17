@@ -1,9 +1,9 @@
 {
   "tarefas": [
     {
-      "id": "0101",
       "title": "Estudar JavaScript",
-      "completed": false
+      "observation": "",
+      "id": "0101"
     },
     {
       "title": "Estudar Node",
@@ -30,11 +30,6 @@
     {
       "id": "2465",
       "title": "Estudar Padrões de Projeto",
-      "completed": false
-    },
-    {
-      "id": "4940",
-      "title": "Estudar",
       "completed": false
     }
   ]
